@@ -1,0 +1,3 @@
+enum CreatePrivateGameEnum {
+  create, join
+}
