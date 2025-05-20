@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:souq_marhaf/core/theming/font_styles.dart';
-import 'package:souq_marhaf/core/widgets/custom_app_bar.dart';
+import 'package:souq_Morhaf/core/theming/font_styles.dart';
+import 'package:souq_Morhaf/core/widgets/custom_app_bar.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../log_in/ui/screens/log_in_screen.dart';
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:souq_marhaf/core/theming/font_styles.dart';
-import '../../../../core/theming/colors.dart';
+import 'package:souq_Morhaf/core/theming/font_styles.dart';
+import '../theming/colors.dart';
 
-class BrandSearchField extends StatelessWidget {
+class SearchField extends StatelessWidget {
   final ValueChanged<String> onChanged;
 
-  const BrandSearchField({super.key, required this.onChanged});
+  const SearchField({super.key, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {

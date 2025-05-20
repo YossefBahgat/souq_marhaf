@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/font_styles.dart';
+import '../theming/colors.dart';
+import '../theming/font_styles.dart';
 
 class CheckboxWidget extends StatelessWidget {
   final bool isConfirmed;
   final ValueChanged<bool?> onChanged;
+  final String text;
+
 
   const CheckboxWidget({
     required this.isConfirmed,
-    required this.onChanged,
+    required this.onChanged, required this.text,
   });
 
   @override
@@ -18,11 +20,11 @@ class CheckboxWidget extends StatelessWidget {
         Checkbox(
           value: isConfirmed,
           onChanged: onChanged,
-          activeColor: ColorsManager.buttonGreen,
+          activeColor: ColorsManager.fontGreen,
         ),
         Expanded(
           child: Text(
-            "أوافق على هذا التعهد",
+            text,
             style: TextStyles.font22black,
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:souq_marhaf/core/theming/font_styles.dart';
-import 'package:souq_marhaf/core/widgets/custom_app_bar.dart';
+import 'package:souq_Morhaf/core/theming/font_styles.dart';
+import 'package:souq_Morhaf/core/widgets/custom_app_bar.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../log_in/ui/screens/log_in_screen.dart';
 
@@ -21,7 +21,11 @@ class ChatsScreen extends StatefulWidget {
 
 class _FavoriteScreenState extends State<ChatsScreen> {
   bool isLoggedIn = false; // غيرها إلى true لتجربة الحالات الأخرى
-  List<FavoriteItem> favoriteItems = []; // جرب تضيف عناصر هنا لتجرب الحالة الثالثة
+  List<FavoriteItem> favoriteItems = [
+    FavoriteItem(title: "منتج 1", image: "assets/images/product1.jpg"),
+    FavoriteItem(title: "منتج 2", image: "assets/images/product2.jpg"),
+    FavoriteItem(title: "منتج 3", image: "assets/images/product3.jpg"),
+  ]; // إضافة عناصر مفضلة لاختبار الحالة 3
 
   bool _isPressed = false;
   bool _isHovering = false;
@@ -90,6 +94,9 @@ class _FavoriteScreenState extends State<ChatsScreen> {
             leading: Image.asset(item.image, width: 60),
             title: Text(item.title, style: TextStyles.font22green),
             trailing: Icon(Icons.favorite, color: Colors.red),
+            onTap: () {
+              // تنفيذ الإجراء عند الضغط على العنصر (مثال: الانتقال إلى صفحة التفاصيل)
+            },
           );
         },
       );

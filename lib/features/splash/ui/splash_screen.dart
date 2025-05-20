@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:souq_marhaf/features/home/ui/home_screen.dart';
+import 'package:souq_Morhaf/features/home/ui/screens/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../core/theming/colors.dart';
-import '../../../core/theming/font_styles.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/font_styles.dart';
 
 class BlockedItemsForm extends StatelessWidget {
   const BlockedItemsForm({super.key});
@@ -27,7 +26,7 @@ class BlockedItemsForm extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Text(
-              "السلعة الموضحة هي السلع الممنوعة في الموقع. هذه السلع ممنوع الاعلان عنها في الموقع و ممنوع ايضا شرائها عبر الموقع. نحن نقوم بحظر المعلن الذي يقوم بالاعلان عن هذه السلع و نقوم بحظر من يتجاوب معه عبر الرسائل الخاصة أو عبر الردود. نرجو ملاحظة ان ليس هناك تنبيه قبل الحظر وان الحظر نهائي لانقاش فيه.",
+              "السلعة الموضحة هي السلع الممنوعة في السوق. هذه السلع ممنوع الاعلان عنها في السوق و ممنوع ايضا شرائها عبر السوق. نحن نقوم بحظر المعلن الذي يقوم بالاعلان عن هذه السلع و نقوم بحظر من يتجاوب معه عبر الرسائل الخاصة أو عبر الردود. نرجو ملاحظة ان ليس هناك تنبيه قبل الحظر وان الحظر نهائي لانقاش فيه.",
               style: TextStyles.font23gray,
             ),
           ),
@@ -36,7 +35,7 @@ class BlockedItemsForm extends StatelessWidget {
           Text("السلع الممنوعة هي : ", style: TextStyles.font25black),
           SizedBox(height: 31.h),
 
-          Text("""جميع السلع الممنوعة حسب قوانين سورية
+          Text("""جميع السلع الممنوعة حسب قوانين سوريا
 
 التقسيط و المنتجات البنكية. هذه السلع ممنوعه حتى لوكانت تعتبر شرعية.
 

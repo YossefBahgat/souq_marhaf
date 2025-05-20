@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:souq_marhaf/features/home/ui/widgets/app_bar_widget.dart';
-import 'package:souq_marhaf/features/home/ui/widgets/bottom_navigation_bar_widget.dart';
-import 'package:souq_marhaf/features/home/ui/widgets/drawer_widget.dart';
-import 'package:souq_marhaf/features/home/ui/widgets/home_body_screen.dart';
-
-import '../../sections/ui/sections_screen.dart';
+import 'package:souq_Morhaf/features/home/ui/widgets/bottom_navigation_bar_widget.dart';
+import '../../../home_chats/ui/screens/chats_screen.dart';
+import '../../../favorite/ui/screens/favorite_screen.dart';
+import 'home_body_screen.dart';
+import '../../../notifications/ui/screens/notification_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,14 +11,13 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   final List<Widget> _screens = [
     const HomeBodyScreen(),
-  //  const SectionsScreen(),
-    //const ChatScreen(),
-    //const GiftsScreen(),
+     FavoriteScreen(),
+    const NotificationScreen(),
+    const ChatsScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -32,8 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(),
-      drawer: DrawerWidget(),
       body: IndexedStack(index: _currentIndex, children: _screens),
       bottomNavigationBar: BottomNavigationBarWidget(
         onItemTapped: _onItemTapped,

@@ -1,4 +1,4 @@
-package com.example.souq_marhaf
+package com.example.souq_morhaf
 
 import io.flutter.embedding.android.FlutterActivity
 

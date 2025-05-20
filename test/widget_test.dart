@@ -7,15 +7,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:souq_marhaf/core/routing/app_router.dart';
+import 'package:souq_Morhaf/core/routing/app_router.dart';
 
-import 'package:souq_marhaf/main.dart';
-import 'package:souq_marhaf/souq_marhaf.dart';
+import 'package:souq_Morhaf/main.dart';
+import 'package:souq_Morhaf/souq_marhaf.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(SouqMarhaf(appRouter: AppRouter()));
+    await tester.pumpWidget(SouqMorhaf(appRouter: AppRouter()));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

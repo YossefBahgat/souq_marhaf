@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:souq_marhaf/core/theming/font_styles.dart';
+import 'package:souq_Morhaf/core/theming/font_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller; // جعلنا الـ controller اختياري
   final String hintText;
   final TextInputType keyboardType;
   final bool obscureText;
@@ -11,9 +11,9 @@ class CustomTextFormField extends StatelessWidget {
 
   const CustomTextFormField({
     super.key,
-    required this.controller,
+    this.controller,
     required this.hintText,
-    required this.keyboardType,
+    this.keyboardType = TextInputType.emailAddress,
     this.obscureText = false,
     this.validator,
   });
@@ -21,12 +21,12 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 0.63.sw,
+      width: 0.68.sw,
       child: TextFormField(
+        controller: controller,
         keyboardType: keyboardType,
         validator: validator,
         obscureText: obscureText,
-        textAlign: TextAlign.end,
         style: TextStyles.font22black,
         cursorOpacityAnimates: true,
         cursorColor: Colors.black,

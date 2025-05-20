@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "933094484133",
+    "project_id": "souq-morhaf",
+    "storage_bucket": "souq-morhaf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933094484133:android:4e86d559eaeb7e2fdc854c",
+        "android_client_info": {
+          "package_name": "com.example.souq_morhaf"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo5bHCObaWvIPQRsAMyGecG5iZv_MT1Gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

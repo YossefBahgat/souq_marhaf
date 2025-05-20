@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:souq_marhaf/features/log_in/ui/widgets/register_container.dart';
+import 'package:souq_Morhaf/features/log_in/ui/widgets/register_form.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/font_styles.dart';
-import 'change_password_container.dart';
-import 'forget_password_container.dart';
-import 'log_in_container.dart';
-import 'otp_container.dart';
+import 'change_password_form.dart';
+import 'forget_password_form.dart';
+import 'log_in_form.dart';
+import 'otp_form.dart';
 
 class AuthContainer extends StatelessWidget {
   const AuthContainer({super.key});
@@ -17,7 +17,7 @@ class AuthContainer extends StatelessWidget {
       height: 0.6.sh,
       width: 0.83.sw,
       decoration: BoxDecoration(
-        color: ColorsManager.backDrawer,
+        color: ColorsManager.appBarGreen,
         borderRadius: BorderRadius.circular(15.r),
         boxShadow: [
           BoxShadow(
@@ -58,12 +58,12 @@ class _AuthFormSwitcherState extends State<AuthFormSwitcher> {
   Widget build(BuildContext context) {
     if (showForgetPassword) {
       return ForgetPasswordForm(
-        onSendEmail: () {
-          setState(() {
-            showForgetPassword = false;
-            showOtp = true;
-          });
-        },
+        // onSendEmail: () {
+        //   setState(() {
+        //     showForgetPassword = false;
+        //     showOtp = true;
+        //   });
+        // },
         onBackToLogin: () {
           setState(() {
             showForgetPassword = false;
@@ -101,18 +101,18 @@ class _AuthFormSwitcherState extends State<AuthFormSwitcher> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _buildAuthTab(
-              text: "تسجيل الدخول",
-              isActive: showLogin,
-              onTap: () => setState(() => showLogin = true),
-            ),
-            _buildAuthTab(
               text: "اشتراك",
               isActive: !showLogin,
               onTap: () => setState(() => showLogin = false),
             ),
+            _buildAuthTab(
+              text: "تسجيل الدخول",
+              isActive: showLogin,
+              onTap: () => setState(() => showLogin = true),
+            ),
           ],
         ),
-        showLogin ? LoginForm(onLogin: () {}) : RegisterForm(onRegister: () {}),
+        showLogin ? LoginForm() : RegisterForm(),
         if (showLogin)
           TextButton(
             onPressed: () {
@@ -140,10 +140,10 @@ class _AuthFormSwitcherState extends State<AuthFormSwitcher> {
         style:
             isActive
                 ? TextStyles.font40green.copyWith(
-              decoration: TextDecoration.underline,
-              decorationColor: ColorsManager.mainGreen,
-              decorationThickness: 1.0,
-            )
+                  decoration: TextDecoration.underline,
+                  decorationColor: ColorsManager.fontGreen,
+                  decorationThickness: 1.0,
+                )
                 : TextStyles.font30black,
       ),
     );

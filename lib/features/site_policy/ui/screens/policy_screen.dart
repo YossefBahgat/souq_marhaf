@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:souq_marhaf/core/theming/colors.dart';
-import 'package:souq_marhaf/core/theming/font_styles.dart';
-import 'package:souq_marhaf/features/site_policy/widgets/policy_container.dart';
-import 'package:souq_marhaf/features/site_policy/widgets/privacy_policy_form.dart';
-import 'package:souq_marhaf/features/site_policy/widgets/suspended_accounts_form.dart';
-import 'package:souq_marhaf/features/site_policy/widgets/usage_form.dart';
-
-import 'widgets/blocked_items_form.dart';
+import 'package:souq_Morhaf/core/theming/colors.dart';
+import 'package:souq_Morhaf/core/theming/font_styles.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../widgets/blocked_items_form.dart';
+import '../widgets/policy_container.dart';
+import '../widgets/privacy_policy_form.dart';
+import '../widgets/suspended_accounts_form.dart';
+import '../widgets/usage_form.dart';
 
 class PolicyScreen extends StatelessWidget {
   const PolicyScreen({super.key});
@@ -15,11 +15,7 @@ class PolicyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: ColorsManager.appBarGreen,
-        title: Text("سياسة موقع مرهف", style: TextStyles.font26blackSemibold),
-        centerTitle: true,
-      ),
+      appBar: CustomAppBar(text: 'سيلسة موقع مرهف',),
       body: Column(
         children: [
           PolicyContainer(

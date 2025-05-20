@@ -19,12 +19,12 @@ class CustomTextButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.symmetric(horizontal: 25.w,vertical: 8.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
           color: ColorsManager.buttonGreen,
         ),
-        child: Text(text, style: TextStyles.font22black),
+        child: Text(text, style: TextStyles.font25black),
       ),
     );
   }

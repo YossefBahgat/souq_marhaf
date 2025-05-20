@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:souq_marhaf/core/theming/font_styles.dart';
-import 'package:souq_marhaf/features/log_in/ui/widgets/auth_container.dart';
+import 'package:souq_Morhaf/core/theming/colors.dart';
+import 'package:souq_Morhaf/core/theming/font_styles.dart';
+import 'package:souq_Morhaf/features/log_in/ui/widgets/auth_container.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
@@ -9,8 +10,7 @@ class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        ),
+      appBar: AppBar(backgroundColor: ColorsManager.white),
       body: SingleChildScrollView(
         child: Column(
           children: [

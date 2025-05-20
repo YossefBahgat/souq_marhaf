@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:souq_marhaf/core/helpers/extensions.dart';
-import 'package:souq_marhaf/core/routing/routes.dart';
-import 'package:souq_marhaf/core/theming/colors.dart';
-import 'package:souq_marhaf/core/theming/font_styles.dart';
-import 'package:souq_marhaf/features/home/ui/widgets/drawer_container.dart';
-import 'package:souq_marhaf/features/site_policy/policy_screen.dart';
+import 'package:souq_Morhaf/core/helpers/extensions.dart';
+import 'package:souq_Morhaf/core/routing/routes.dart';
+import 'package:souq_Morhaf/core/theming/colors.dart';
+import 'package:souq_Morhaf/core/theming/font_styles.dart';
+import 'package:souq_Morhaf/features/home/ui/widgets/drawer_container.dart';
+import 'package:souq_Morhaf/features/site_policy/ui/screens/policy_screen.dart';
 
-import '../../../log_in/ui/log_in_screen.dart';
+import '../../../log_in/ui/screens/log_in_screen.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({super.key});

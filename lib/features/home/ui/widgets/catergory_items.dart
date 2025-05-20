@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/font_styles.dart';
 
-class CatergoryItems extends StatelessWidget {
-  const CatergoryItems({
+class CategoryItems extends StatelessWidget {
+  const CategoryItems({
     super.key,
     required this.image,
     required this.text,

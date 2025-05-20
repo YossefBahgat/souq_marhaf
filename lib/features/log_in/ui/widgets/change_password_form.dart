@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/font_styles.dart';
@@ -27,6 +28,29 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
     super.dispose();
   }
 
+  Future<void> _changePassword() async {
+    final password = _newPasswordController.text;
+    final confirm = _confirmPasswordController.text;
+
+    if (!_formKey.currentState!.validate()) return;
+
+    if (password != confirm) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("كلمات المرور غير متطابقة")),
+      );
+      return;
+    }
+
+    try {
+      await FirebaseAuth.instance.currentUser!.updatePassword(password);
+      widget.onPasswordChanged();
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("فشل التغيير: ${e.toString()}")),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -38,7 +62,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
             "قم بإدخال كلمة المرور الجديدة",
             style: TextStyles.font40green.copyWith(
               decoration: TextDecoration.underline,
-              decorationColor: ColorsManager.mainGreen,
+              decorationColor: ColorsManager.fontGreen,
               decorationThickness: 1.0,
             ),
           ),
@@ -47,44 +71,27 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
               CustomTextFormField(
                 controller: _newPasswordController,
                 hintText: "كلمة المرور الجديدة",
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-                validator: (value) {
-                  if (value == null || value.isEmpty) return "هذا الحقل مطلوب";
-                  if (value.length < 6) return "كلمة المرور قصيرة جدًا";
-                  return null;
-                },
+          //      obscureText: true,
+         //       keyboardType: TextInputType.visiblePassword,
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) return "هذا الحقل مطلوب";
+                //   if (value.length < 6) return "كلمة المرور قصيرة جدًا";
+                //   return null;
+                // },
               ),
               SizedBox(height: 0.025.sh),
               CustomTextFormField(
                 controller: _confirmPasswordController,
                 hintText: "تأكيد كلمة المرور",
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
+         //       obscureText: true,
+       //         keyboardType: TextInputType.visiblePassword,
               ),
             ],
           ),
           CustomTextButton(
             text: "تغيير كلمة المرور",
-            onPressed: () {
-              final isValid = _formKey.currentState!.validate();
-              final password = _newPasswordController.text;
-              final confirm = _confirmPasswordController.text;
-
-              if (!isValid) return;
-
-              if (password != confirm) {
-                // أظهر رسالة خطأ يدويًا
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("كلمات المرور غير متطابقة")),
-                );
-                return;
-              }
-
-              widget.onPasswordChanged();
-            },
+            onPressed: _changePassword,
           ),
-
         ],
       ),
     );

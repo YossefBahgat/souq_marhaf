@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../../core/theming/colors.dart';
-import '../../../core/theming/font_styles.dart';
+import '../../../../core/theming/font_styles.dart';
 
 class PolicyContainer extends StatelessWidget {
   const PolicyContainer({
